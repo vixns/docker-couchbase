@@ -6,7 +6,7 @@ ENV COUCHBASE_VERSION 3.0.1
 ENV PATH /opt/couchbase/bin:/opt/couchbase/bin/tools:$PATH
 
 #ADD couchbase-server-community_${COUCHBASE_VERSION}-debian7_amd64.deb /tmp/couchbase-server-community_${COUCHBASE_VERSION}-debian7_amd64.deb
-RUN curl -o /tmp/couchbase-server-community_${COUCHBASE_VERSION}-debian7_amd64.deb http://packages.couchbase.com/releases/${COUCHBASE_VERSION}/couchbase-server-community_${COUCHBASE_VERSION}-debian7_amd64.deb
+RUN curl -s -o /tmp/couchbase-server-community_${COUCHBASE_VERSION}-debian7_amd64.deb http://packages.couchbase.com/releases/${COUCHBASE_VERSION}/couchbase-server-community_${COUCHBASE_VERSION}-debian7_amd64.deb
 
 # Install couchbase Server.
 RUN \

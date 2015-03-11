@@ -78,6 +78,7 @@ rebalance() {
   local server_ip=$(get_server_ip)
   check_data_persistence
   echo "adding server with rebalance..."
+  start /opt/couchbase/bin/couchbase-cli rebalance-stop -c $server_ip:8091
   start /opt/couchbase/bin/couchbase-cli rebalance -c $server_ip:8091 -u "$COUCHBASE_USER" -p "$COUCHBASE_PASS" --server-add=$ip:8091 --server-add-username="$COUCHBASE_USER" --server-add-password="$COUCHBASE_PASS"
 }
 
